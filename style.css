@@ -1,0 +1,202 @@
+/*Setup*/
+
+*{
+    margin:0;
+    padding:0;
+    font-family:Arial;
+}
+
+:root{
+    --c_bg2:#6462e7;
+    --c_bg1:rgb(175,104,234);
+    --c_txt:#e69077;
+    --mh:25vw;
+    --mv:20vh;
+    --w:calc(100vw - calc( var(--mh) + var(--mh) ));
+    --h:calc(100vh - calc( var(--mv) + var(--mv) ));
+}
+
+/*Setup*/
+
+
+
+/*Posicionamiento*/
+body{
+    background:var(--c_bg1);
+    background: linear-gradient(var(--c_bg1) 1%, var(--c_bg2) 100%) ;
+    min-height:100vh;
+    min-width: 100vw;  
+    justify-content:center; 
+}
+
+
+
+.grid{
+
+    background-color:white;
+    margin-left: var(--mh);
+    margin-right: var(--mh);
+    margin-top: var(--mv);
+    margin-top: var(--mv);
+    width: var(--w);
+    height: var(--h);
+    padding: var(--pad);
+    display: grid;
+    border-radius: 10px;
+    min-height:600px;
+    min-width: 960px;
+    background-image: url("images/bg-pattern-desktop.svg");
+    background-position: -30vw -35vh;
+    background-repeat: no-repeat;
+}
+
+.content{
+    padding:3rem;
+    height:90%;
+    display:grid;
+    column-count: 1;
+    grid-column: 2;
+    width:50%; 
+
+}
+
+.img-Col{
+    
+    grid-column: 1;
+    width:50%; 
+    height:100%;
+
+}
+
+/*Posicionamiento*/
+
+
+
+
+/*imagenes*/
+/*Movil*/
+.mov{
+    display: none;
+}
+
+
+/*Desk*/
+#image{
+    grid-column: 1;
+    grid-row: 1;
+    margin-left:-8.7vw;
+    height: calc(359px + 10vh );
+}
+
+/*imagenes*/
+
+
+
+
+/*Preguntas*/
+.hidden{
+    display:none;
+}
+
+button{
+    text-align: left;
+    display:block;
+    background-color:white;
+    border:none;
+    padding:5px;
+    width:100%;
+    justify-content:justify;
+}
+
+
+button:focus{
+    font-weight: bold;
+}
+
+button:focus .hidden {
+    display:block;
+    font-weight: normal;
+}
+
+button:focus .arrow {
+    transform: rotate(180deg);
+}
+
+.bar{
+    height:2px;
+    background-color:#999;
+    width:100%;
+}
+
+/*Preguntas*/
+
+
+
+/*Media*/
+
+@media (max-width:600px) {
+    *{
+        --mh:10vw;
+        --mv:10vh;
+        --w:calc(100vw - calc( var(--mh) + var(--mh) ));
+        --h:calc(100vh - calc( var(--mv) + var(--mv) ));
+
+    }
+
+    .grid{
+        height: 80%;
+        display: grid;
+        border-radius: 10px;
+        min-width: 250px;
+        background:white;
+        columns: 1;
+    }
+    
+    .content{
+        padding:3rem;
+        height:40%;
+        display:grid;
+        column-count: 1;
+        grid-column: 1;
+        width:var(--w); 
+        grid-row: 2;
+    }
+    
+    .img-Col{     
+        grid-column: 1;
+        grid-row: 1;
+        width:var(--w);
+        height:40%;
+    }
+    
+    
+    button{
+        display:block;
+        background-color:white;
+        border:none;
+        padding:5px;
+        width:calc(var(--w) * 0.8 );
+        justify-content: justify;
+    }
+
+
+
+    .desk{
+        display: none;
+    }
+
+    .mov{display:block;}
+
+    #image{
+        height: calc(196px + 10vh );
+    }
+
+
+    #pat-mov{
+        height: 30vh;
+        margin-top:-10vh
+    }
+
+
+
+}
